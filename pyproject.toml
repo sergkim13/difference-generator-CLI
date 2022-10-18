@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Second project from Hexlet's Python course"
 authors = ["Sergey Kim <<sergkim7@gmail.com>>"]
 readme = "README.md"
-packages = [{include = "hexlet_code", "gendiff"]
+packages = [{include = "gendiff"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
