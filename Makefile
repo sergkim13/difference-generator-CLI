@@ -4,6 +4,9 @@ install:
 build:
 	poetry build
 
+publish:
+	poetry publish --dry-run
+
 package-install:
 	python3 -m pip install --user dist/*.whl
 
@@ -15,3 +18,6 @@ test:
 
 test-coverage:
 	poetry run pytest --cov
+
+lint:
+	poetry run flake8 hexlet-code
