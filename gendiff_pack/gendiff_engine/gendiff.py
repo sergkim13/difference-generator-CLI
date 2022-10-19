@@ -19,10 +19,5 @@ def generate_diff(path_to_file1, path_to_file2):
             diff_list.append(f'- {key} : {dict1[key]}\n+ {key} : {dict2[key]}')
     diff_str = '\n'.join(diff_list)
     result = '{\n' + diff_str +'\n' + '}' 
-    print(result)
-    
+    return(result)
 
-file1 = 'gendiff/file1.json'
-file2 = 'gendiff/file2.json'
-
-generate_diff(file1, file2)
