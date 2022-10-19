@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-from gendiff_pack.gendiff_engine import gendiff_script_body
+from gendiff_pack.gendiff_engine.gendiff_script_body import gendiff_script
+
 
 def main():
-    gendiff_script_body()
+    gendiff_script()
 
 
 if __name__ == '__main__':
