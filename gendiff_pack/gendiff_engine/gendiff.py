@@ -18,6 +18,5 @@ def generate_diff(path_to_file1, path_to_file2):
         else:
             diff_list.append(f'- {key} : {dict1[key]}\n+ {key} : {dict2[key]}')
     diff_str = '\n'.join(diff_list)
-    result = '{\n' + diff_str +'\n' + '}' 
-    return(result)
-
+    result = '{\n' + diff_str + '\n' + '}'
+    return (result)
