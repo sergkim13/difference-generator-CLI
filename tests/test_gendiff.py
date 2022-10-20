@@ -1,8 +1,8 @@
 from gendiff_pack.gendiff_engine.gendiff import generate_diff
 
 
-file1 = '/Users/kimsergey/coding/python-project-50/tests/file1.json'
-file2 = '/Users/kimsergey/coding/python-project-50/tests/file2.json'
+file1 = '/Users/kimsergey/coding/python-project-50/file1.json'
+file2 = '/Users/kimsergey/coding/python-project-50/file2.json'
 result = """{
 - follow : false
   host : hexlet.io
