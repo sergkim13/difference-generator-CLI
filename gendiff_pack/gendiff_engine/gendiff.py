@@ -25,8 +25,8 @@ def generate_diff(path_to_file1, path_to_file2):
             diff_list.append(f'  {key} : {convert_bool(dict1[key])}')
         else:
             diff_list.append(
-                f'- {key} : {convert_bool(dict1[key])}\n+ \
-                    {key} : {convert_bool(dict2[key])}')
+                f'- {key} : {convert_bool(dict1[key])}\n'
+                f'+ {key} : {convert_bool(dict2[key])}')
     diff_str = '\n'.join(diff_list)
     result = '{\n' + diff_str + '\n' + '}'
     return (result)
