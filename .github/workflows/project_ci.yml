@@ -19,6 +19,6 @@ jobs:
         run: make test
       - name: test & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4
-          with:
-            secret: ${{ secrets.cc_test_reporter_id }}
-            coverageCommand: make test-coverage
+        with:
+          secret: ${{ secrets.cc_test_reporter_id }}
+          coverageCommand: make test-coverage
