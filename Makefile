@@ -17,7 +17,7 @@ test:
 	poetry run pytest
 
 test-coverage:
-	poetry run pytest --cov
+	poetry run pytest --cov-report term-missing --cov=gendiff_pack --cov-report xml
 
 lint:
 	poetry run flake8 gendiff_pack
