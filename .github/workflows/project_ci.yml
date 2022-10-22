@@ -13,7 +13,12 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: SG60/setup-poetry@v1
       - run: make install
-      - name: run tests
-        run: make test
       - name: run lint
         run: make lint
+      - name: run tests
+        run: make test
+      - name: test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+          with:
+            secret: ${{ secrets.cc_test_reporter_id }}
+            coverageCommand: make test-coverage
