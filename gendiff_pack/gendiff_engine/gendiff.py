@@ -1,5 +1,4 @@
-import json
-
+from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
 
 def convert_bool(value):
     if value is True:
@@ -10,10 +9,8 @@ def convert_bool(value):
 
 
 def generate_diff(path_to_file1, path_to_file2):
-    with open(path_to_file1) as f1:
-        dict1 = json.load(f1)
-    with open(path_to_file2) as f2:
-        dict2 = json.load(f2)
+    dict1 = parse_input_file(path_to_file1)
+    dict2 = parse_input_file(path_to_file2)
     keys = sorted(list(dict1.keys() | dict2.keys()))
     diff_list = []
     for key in keys:
