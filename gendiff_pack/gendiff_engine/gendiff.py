@@ -1,5 +1,6 @@
 from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
 
+
 def convert_bool(value):
     if value is True:
         return 'true'
