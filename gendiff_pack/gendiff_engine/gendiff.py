@@ -39,6 +39,7 @@ def generate_diff_plain(path_to_file1, path_to_file2):
     result = '{\n' + diff_str + '\n' + '}'
     return (result)
 
+
 def generate_diff(path_to_file1, path_to_file2):
     dict1 = parse_input_file(path_to_file1)
     dict2 = parse_input_file(path_to_file2)
