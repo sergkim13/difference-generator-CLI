@@ -1,5 +1,5 @@
 from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
-from pprint import pprint
+from gendiff_pack.gendiff_format.format_diff import format_diff, convert_bool
 
 
 def diff(source1, source2):
@@ -17,16 +17,6 @@ def diff(source1, source2):
         else:
             result[(key, 'changed')] = (source1[key], source2[key])
     return result
-
-
-def convert_bool(value):
-    if value is True:
-        return 'true'
-    if value is False:
-        return 'false'
-    if value is None:
-        return 'null'
-    return value
 
 
 def generate_diff_plain(path_to_file1, path_to_file2):
@@ -52,10 +42,5 @@ def generate_diff_plain(path_to_file1, path_to_file2):
 def generate_diff(path_to_file1, path_to_file2):
     dict1 = parse_input_file(path_to_file1)
     dict2 = parse_input_file(path_to_file2)
-    result = format(diff(dict1, dict2))
+    result = format_diff(diff(dict1, dict2))
     return result
-
-# dict1 = parse_input_file('/Users/kimsergey/coding/python-project-50/tests/fixtures/nested/file1.json')
-# dict2 = parse_input_file('/Users/kimsergey/coding/python-project-50/tests/fixtures/nested/file2.json')
-
-# pprint(diff(dict1, dict2))
