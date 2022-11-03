@@ -12,7 +12,6 @@ def parse_input_file(path_to_file):
         return 'This should be json or yaml file!'
 
 
-
 def make_diff_dict(source1, source2):
     keys = sorted(source1.keys() | source2.keys())
     result = {}
@@ -30,8 +29,9 @@ def make_diff_dict(source1, source2):
     return result
 
 
-def generate_diff(path_to_file1, path_to_file2):
+def generate_diff(path_to_file1, path_to_file2, format_name='stylish'):
     dict1 = parse_input_file(path_to_file1)
     dict2 = parse_input_file(path_to_file2)
-    result = format_diff_stylish(make_diff_dict(dict1, dict2))
+    if format_name == 'stylish':
+        result = format_diff_stylish(make_diff_dict(dict1, dict2))
     return result

@@ -1,15 +1,15 @@
-from gendiff_pack.gendiff_engine.gendiff import make_diff_dict, generate_diff, parse_input_file
+from gendiff_pack.gendiff_engine.gendiff import make_diff_dict, parse_input_file
 
 
-file1_json = 'tests/fixtures/plain/file1.json'
-file2_json = 'tests/fixtures/plain/file2.json'
-file1_yml = 'tests/fixtures/plain/file1.yml'
-file2_yaml = 'tests/fixtures/plain/file2.yaml'
+file1_json = 'tests/fixtures/plain_files/file1.json'
+file2_json = 'tests/fixtures/plain_files/file2.json'
+file1_yml = 'tests/fixtures/plain_files/file1.yml'
+file2_yaml = 'tests/fixtures/plain_files/file2.yaml'
 
-file1_nested_json = 'tests/fixtures/nested/file1.json'
-file2_nested_json = 'tests/fixtures/nested/file2.json'
-file1_nested_yml = 'tests/fixtures/nested/file1.yml'
-file2_nested_yaml = 'tests/fixtures/nested/file2.yaml'
+file1_nested_json = 'tests/fixtures/nested_files/file1.json'
+file2_nested_json = 'tests/fixtures/nested_files/file2.json'
+file1_nested_yml = 'tests/fixtures/nested_files/file1.yml'
+file2_nested_yaml = 'tests/fixtures/nested_files/file2.yaml'
 
 
 diff_dict = {('common', 'children'): {('follow', 'added'): False,
@@ -56,21 +56,3 @@ def test_make_diff_nested4():
   dict1 = parse_input_file(file1_nested_yml)
   dict2 = parse_input_file(file2_nested_yaml)
   assert make_diff_dict(dict1, dict2) == diff_dict
-
-
-def test_plain_generate_diff():
-  with open('tests/fixtures/plain/result.txt') as f:
-    result = f.read()
-    assert generate_diff(file1_json, file2_json) == result    
-    assert generate_diff(file1_yml, file2_yaml) == result
-    assert generate_diff(file1_yml, file2_json) == result
-    assert generate_diff(file1_json, file2_yaml) == result
-
-
-def test_nested_generate_diff():
-  with open('tests/fixtures/nested/result.txt') as f:
-    result = f.read()
-    assert generate_diff(file1_nested_json, file2_nested_json) == result
-    assert generate_diff(file1_nested_yml, file2_nested_yaml) == result
-    assert generate_diff(file1_nested_yml, file2_nested_json) == result
-    assert generate_diff(file1_nested_json, file2_nested_yaml) == result
