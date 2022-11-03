@@ -5,10 +5,12 @@ import yaml
 
 def parse_input_file(path_to_file):
     if path_to_file.endswith('.json'):
-        dict_ = json.load(open(path_to_file))
-    elif path_to_file.endswith('.yml') or path_to_file.endswith('.yaml'):
-        dict_ = yaml.safe_load(open(path_to_file))
-    return dict_
+        return json.load(open(path_to_file))
+    elif path_to_file.endswith('.yaml') or path_to_file.endswith('.yml'):
+        return yaml.safe_load(open(path_to_file))
+    else:
+        return 'This should be json or yaml file!'
+
 
 
 def make_diff_dict(source1, source2):

@@ -30,25 +30,29 @@ diff_dict = {('common', 'children'): {('follow', 'added'): False,
  ('group3', 'added'): {'deep': {'id': {'number': 45}}, 'fee': 100500}}
 
 
-def test_diff_nested1():
+def test_parsing_wrong_file():
+  assert parse_input_file('bad_example.doc') == 'This should be json or yaml file!'
+
+
+def test_make_diff_nested1():
   dict1 = parse_input_file(file1_nested_json)
   dict2 = parse_input_file(file2_nested_json)
   assert make_diff_dict(dict1, dict2) == diff_dict
 
 
-def test_diff_nested2():
+def test__make_diff_nested2():
   dict1 = parse_input_file(file1_nested_json)
   dict2 = parse_input_file(file2_nested_yaml)
   assert make_diff_dict(dict1, dict2) == diff_dict
 
 
-def test_diff_nested3():
+def test_make_diff_nested3():
   dict1 = parse_input_file(file1_nested_yml)
   dict2 = parse_input_file(file2_nested_json)
   assert make_diff_dict(dict1, dict2) == diff_dict
 
 
-def test_diff_nested4():
+def test_make_diff_nested4():
   dict1 = parse_input_file(file1_nested_yml)
   dict2 = parse_input_file(file2_nested_yaml)
   assert make_diff_dict(dict1, dict2) == diff_dict
