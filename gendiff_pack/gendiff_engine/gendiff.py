@@ -1,6 +1,16 @@
-from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
-from gendiff_pack.gendiff_format.format_diff import (
+from gendiff_pack.gendiff_format.format_diff_stylish import (
     format_diff_stylish, convert_bool)
+import json
+import yaml
+from pprint import pprint
+
+
+def parse_input_file(path_to_file):
+    if path_to_file.endswith('.json'):
+        dict_ = json.load(open(path_to_file))
+    elif path_to_file.endswith('.yml') or path_to_file.endswith('.yaml'):
+        dict_ = yaml.safe_load(open(path_to_file))
+    return dict_
 
 
 def make_diff_dict(source1, source2):

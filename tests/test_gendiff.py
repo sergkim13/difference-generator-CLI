@@ -1,5 +1,4 @@
-from gendiff_pack.gendiff_engine.gendiff import generate_diff_plain, make_diff_dict, generate_diff
-from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
+from gendiff_pack.gendiff_engine.gendiff import make_diff_dict, generate_diff, parse_input_file
 
 
 file1_json = 'tests/fixtures/plain/file1.json'
@@ -58,10 +57,10 @@ def test_diff_nested4():
 def test_plain_generate_diff():
   with open('tests/fixtures/plain/result.txt') as f:
     result = f.read()
-    assert generate_diff_plain(file1_json, file2_json) == result    
-    assert generate_diff_plain(file1_yml, file2_yaml) == result
-    assert generate_diff_plain(file1_yml, file2_json) == result
-    assert generate_diff_plain(file1_json, file2_yaml) == result
+    assert generate_diff(file1_json, file2_json) == result    
+    assert generate_diff(file1_yml, file2_yaml) == result
+    assert generate_diff(file1_yml, file2_json) == result
+    assert generate_diff(file1_json, file2_yaml) == result
 
 
 def test_nested_generate_diff():

@@ -1,7 +1,6 @@
 import argparse
-from gendiff_pack.gendiff_engine.gendiff import make_diff_dict
-from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
-from gendiff_pack.gendiff_format.format_diff import format_diff_stylish
+from gendiff_pack.gendiff_engine.gendiff import make_diff_dict, parse_input_file
+from gendiff_pack.gendiff_format.format_diff_stylish import format_diff_stylish
 
 
 def gendiff_script():
