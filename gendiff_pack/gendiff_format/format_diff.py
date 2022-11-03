@@ -18,31 +18,31 @@ def format_diff_stylish(source, replacer=' ', spacesCount=2):
             return convert_bool(current_value)
 
         current_indent = replacer * depth
-        deep_indent_size = depth + spacesCount
-        deep_indent = replacer * deep_indent_size
+        indent_size = depth + spacesCount
+        indent = replacer * indent_size
         lines = []
         for key, val in current_value.items():
             if key[1] == 'added':
-                lines.append(f'{deep_indent}+ {key[0]}: '
-                             f'{inner(val, deep_indent_size + 2)}')
+                lines.append(f'{indent}+ {key[0]}: '
+                             f'{inner(val, indent_size + 2)}')
             elif key[1] == 'deleted':
-                lines.append(f'{deep_indent}- {key[0]}: '
-                             f'{inner(val, deep_indent_size + 2)}')
+                lines.append(f'{indent}- {key[0]}: '
+                             f'{inner(val, indent_size + 2)}')
             elif key[1] == 'changed':
                 lines.append(
-                    f'{deep_indent}- {key[0]}: '
-                    f'{inner(val[0], deep_indent_size + 2)}\n'
-                    f'{deep_indent}+ {key[0]}: '
-                    f'{inner(val[1], deep_indent_size + 2)}')
+                    f'{indent}- {key[0]}: '
+                    f'{inner(val[0], indent_size + 2)}\n'
+                    f'{indent}+ {key[0]}: '
+                    f'{inner(val[1], indent_size + 2)}')
             elif key[1] == 'unchanged':
-                lines.append(f'{deep_indent}  {key[0]}: '
-                             f'{inner(val, deep_indent_size + 2)}')
+                lines.append(f'{indent}  {key[0]}: '
+                             f'{inner(val, indent_size + 2)}')
             elif key[1] == 'children':
-                lines.append(f'{deep_indent}  {key[0]}: '
-                             f'{inner(val, deep_indent_size + 2)}')
+                lines.append(f'{indent}  {key[0]}: '
+                             f'{inner(val, indent_size + 2)}')
             else:
-                lines.append(f'{deep_indent}  {key}: '
-                             f'{inner(val, deep_indent_size + 2)}')
+                lines.append(f'{indent}  {key}: '
+                             f'{inner(val, indent_size + 2)}')
             result = itertools.chain("{", lines, [current_indent + "}"])
         return '\n'.join(result)
 
