@@ -11,7 +11,7 @@ def convert_bool(value):
     return value
 
 
-def format_diff(source, replacer=' ', spacesCount=2):
+def format_diff_stylish(source, replacer=' ', spacesCount=2):
 
     def inner(current_value, depth):
         if not isinstance(current_value, dict):
