@@ -1,4 +1,4 @@
-from gendiff_pack.gendiff_engine.gendiff import generate_diff_plain, diff, generate_diff
+from gendiff_pack.gendiff_engine.gendiff import generate_diff_plain, make_diff_dict, generate_diff
 from gendiff_pack.gendiff_engine.input_format_parser import parse_input_file
 
 
@@ -34,25 +34,25 @@ diff_dict = {('common', 'children'): {('follow', 'added'): False,
 def test_diff_nested1():
   dict1 = parse_input_file(file1_nested_json)
   dict2 = parse_input_file(file2_nested_json)
-  assert diff(dict1, dict2) == diff_dict
+  assert make_diff_dict(dict1, dict2) == diff_dict
 
 
 def test_diff_nested2():
   dict1 = parse_input_file(file1_nested_json)
   dict2 = parse_input_file(file2_nested_yaml)
-  assert diff(dict1, dict2) == diff_dict
+  assert make_diff_dict(dict1, dict2) == diff_dict
 
 
 def test_diff_nested3():
   dict1 = parse_input_file(file1_nested_yml)
   dict2 = parse_input_file(file2_nested_json)
-  assert diff(dict1, dict2) == diff_dict
+  assert make_diff_dict(dict1, dict2) == diff_dict
 
 
 def test_diff_nested4():
   dict1 = parse_input_file(file1_nested_yml)
   dict2 = parse_input_file(file2_nested_yaml)
-  assert diff(dict1, dict2) == diff_dict
+  assert make_diff_dict(dict1, dict2) == diff_dict
 
 
 def test_plain_generate_diff():
