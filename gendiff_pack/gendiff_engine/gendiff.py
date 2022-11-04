@@ -4,6 +4,16 @@ import json
 import yaml
 
 
+def generate_diff(path_to_file1, path_to_file2, format_name='stylish'):
+    dict1 = parse_input_file(path_to_file1)
+    dict2 = parse_input_file(path_to_file2)
+    if format_name == 'plain':
+        result = format_diff_plain(make_diff_dict(dict1, dict2))
+    else:
+        result = format_diff_stylish(make_diff_dict(dict1, dict2))
+    return result
+
+
 def parse_input_file(path_to_file):
     if path_to_file.endswith('.json'):
         return json.load(open(path_to_file))
@@ -27,14 +37,4 @@ def make_diff_dict(source1, source2):
             result[(key, 'unchanged')] = source1[key]
         else:
             result[(key, 'changed')] = (source1[key], source2[key])
-    return result
-
-
-def generate_diff(path_to_file1, path_to_file2, format_name='stylish'):
-    dict1 = parse_input_file(path_to_file1)
-    dict2 = parse_input_file(path_to_file2)
-    if format_name == 'plain':
-        result = format_diff_plain(make_diff_dict(dict1, dict2))
-    else:
-        result = format_diff_stylish(make_diff_dict(dict1, dict2))
     return result
