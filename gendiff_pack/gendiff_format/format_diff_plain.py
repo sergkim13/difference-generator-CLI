@@ -1,13 +1,21 @@
-def convert_value(value):
-    if isinstance(value, dict):
-        return '[complex value]'
-    if value is True:
-        return 'true'
-    if value is False:
-        return 'false'
-    if value is None:
-        return 'null'
-    return f"'{value}'"
+from gendiff_pack.gendiff_format.format_diff_stylish import convert_bool
+
+
+def format_diff_plain(source):
+
+    def inner(current_value, parent):
+        lines = []
+        for key, val in current_value.items():
+            property_name = get_property_name(parent, key[0])
+            if key[1] == 'children':
+                lines.append(inner(val, property_name))
+            elif key[1] == 'unchanged':
+                pass
+            else:
+                lines.append(get_line(key[1], property_name, val))
+        return '\n'.join(lines)
+
+    return inner(source, '')
 
 
 def get_property_name(parent, property):
@@ -28,18 +36,9 @@ def get_line(key, name, val):
                f"From {convert_value(val[0])} to {convert_value(val[1])}"
 
 
-def format_diff_plain(source):
-
-    def inner(current_value, parent):
-        lines = []
-        for key, val in current_value.items():
-            property_name = get_property_name(parent, key[0])
-            if key[1] == 'children':
-                lines.append(inner(val, property_name))
-            elif key[1] == 'unchanged':
-                pass
-            else:
-                lines.append(get_line(key[1], property_name, val))
-        return '\n'.join(lines)
-
-    return inner(source, '')
+def convert_value(value):
+    if isinstance(value, (bool, type(None))):
+        return convert_bool(value)
+    if isinstance(value, dict):
+        return '[complex value]'
+    return f"'{value}'"
