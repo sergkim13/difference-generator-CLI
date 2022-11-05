@@ -41,4 +41,6 @@ def convert_value(value):
         return convert_bool(value)
     if isinstance(value, dict):
         return '[complex value]'
+    if isinstance(value, int):
+        return value
     return f"'{value}'"
