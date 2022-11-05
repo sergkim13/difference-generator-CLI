@@ -1,3 +1,8 @@
+install-gendiff:
+	poetry install
+	poetry build
+	python3 -m pip install --force-reinstall --user dist/*.whl
+
 install:
 	poetry install
 
