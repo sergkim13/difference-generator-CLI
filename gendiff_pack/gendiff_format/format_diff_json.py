@@ -17,7 +17,7 @@ def format_diff_json(source):
         return json_dict
 
     result = inner(source)
-    return json.dumps(result)
+    return json.dumps(result, indent=4)
 
 
 def convert_keys(key):
