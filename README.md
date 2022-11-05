@@ -6,8 +6,15 @@
 
 
 ### Installation
-Clone repository and install:
-``$ git clone https://github.com/seeu359/python-project-lvl2.git``
+1. Make sure you have Poetry installed on your computer.
+If you have not, type:
+'''curl -sSL https://install.python-poetry.org | python3 -''' (works for Linux, macOS, Windows (WSL))
+See https://python-poetry.org/docs/ for more info about Poetry.
+2. Clone repository:
+``$ git clone https://github.com/sergkim13/python-project-50.git``
+2. Type: 
+'''make install-gendiff'''
+
 
 ### Description:
 This CLI-utility compares two '''JSON''' or '''YAML''' files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
