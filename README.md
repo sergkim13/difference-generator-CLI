@@ -8,20 +8,20 @@
 ### Installation
 1. Make sure you have Poetry installed on your computer.
 If you have not, type:
-'''curl -sSL https://install.python-poetry.org | python3 -''' (works for Linux, macOS, Windows (WSL))
+```curl -sSL https://install.python-poetry.org | python3 -``` (works for Linux, macOS, Windows (WSL))
 See https://python-poetry.org/docs/ for more info about Poetry.
 2. Clone repository:
 ``$ git clone https://github.com/sergkim13/python-project-50.git``
 2. Type: 
-'''make install-gendiff'''
+```make install-gendiff```
 
 
 ### Description:
-This CLI-utility compares two '''JSON''' or '''YAML''' files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
+This CLI-utility compares two ```JSON``` or ```YAML``` files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
 Input "gendiff -h" for more information.
 ______________
 ### Описание:
-Данная консольная утилита сравнивает между собой два файла формата '''JSON''' или '''YAML''' и показывает разницу между ними. Вы можете настроить формат вывода результата: 'stylish' (выбран по умолчанию), 'plain' или 'json'.
+Данная консольная утилита сравнивает между собой два файла формата ```JSON``` или ```YAML``` и показывает разницу между ними. Вы можете настроить формат вывода результата: 'stylish' (выбран по умолчанию), 'plain' или 'json'.
 Наберите "gendiff -h", чтобы узнать больше.
 
 ### Manual:
