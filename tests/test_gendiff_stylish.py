@@ -1,4 +1,4 @@
-from gendiff_pack import generate_diff
+from gendiff import generate_diff
 
 # Плоские файлы
 file1_json = 'tests/fixtures/plain_files/file1.json'

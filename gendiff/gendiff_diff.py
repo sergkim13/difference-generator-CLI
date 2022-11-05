@@ -1,6 +1,6 @@
-from gendiff_pack.gendiff_format.format_diff_stylish import format_diff_stylish
-from gendiff_pack.gendiff_format.format_diff_plain import format_diff_plain
-from gendiff_pack.gendiff_format.format_diff_json import format_diff_json
+from gendiff.gendiff_format.format_diff_stylish import format_diff_stylish
+from gendiff.gendiff_format.format_diff_plain import format_diff_plain
+from gendiff.gendiff_format.format_diff_json import format_diff_json
 import json
 import yaml
 

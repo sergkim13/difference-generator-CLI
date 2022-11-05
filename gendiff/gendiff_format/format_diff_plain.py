@@ -1,4 +1,4 @@
-from gendiff_pack.gendiff_format.format_diff_stylish import convert_bool
+from gendiff.gendiff_format.format_diff_stylish import convert_bool
 
 
 def format_diff_plain(source):

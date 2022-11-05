@@ -1,4 +1,4 @@
-from gendiff_pack.gendiff_engine.gendiff import make_diff_dict, parse_input_file
+from gendiff.gendiff_diff import make_diff_dict, parse_input_file
 
 
 file1_json = 'tests/fixtures/plain_files/file1.json'

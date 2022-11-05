@@ -5,7 +5,7 @@ description = "Second project from Hexlet's Python course"
 authors = ["Sergey Kim <<sergkim7@gmail.com>>"]
 readme = "README.md"
 packages = [
-    {include = "gendiff_pack"},
+    {include = "gendiff"},
     ]
 
 [tool.poetry.dependencies]
@@ -13,7 +13,7 @@ python = "^3.10"
 PyYAML = "^6.0"
 
 [tool.poetry.scripts]
-gendiff = "gendiff_pack.scripts.gendiff_script:main"
+gendiff = "gendiff.scripts.gendiff_script:main"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.3"
