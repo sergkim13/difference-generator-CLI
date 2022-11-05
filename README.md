@@ -63,12 +63,12 @@ ______________
    1. `-f stylish`- по умолчанию. Пример:
   
    >{
-    - follow: false
-      host: hexlet.io
-    - proxy: 123.234.53.22
-    - timeout: 50
-    + timeout: 20
-    + verbose: true
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
     }
     2. `-f plain`. Пример:  
   
