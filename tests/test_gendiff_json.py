@@ -15,7 +15,8 @@ file2_nested_yaml = 'tests/fixtures/nested_files/file2.yaml'
 
 
 def test_generate_diff_json_format_with_plain_files():
-    result = json.load(open('tests/fixtures/results/json_format/json_format_result_with_plain_files.json'))
+    result = json.load(open(
+        'tests/fixtures/results/json/result_with_plain_files.json'))
     result = json.dumps(result, indent=4)
     assert generate_diff(file1_json, file2_json, format_name='json') == result
     assert generate_diff(file1_yml, file2_yaml, format_name='json') == result
@@ -24,9 +25,14 @@ def test_generate_diff_json_format_with_plain_files():
 
 
 def test_generate_diff_json_format_with_nested_files():
-    result = json.load(open('tests/fixtures/results/json_format/json_format_result_with_nested_files.json'))
+    result = json.load(open(
+        'tests/fixtures/results/json/result_with_nested_files.json'))
     result = json.dumps(result, indent=4)
-    assert generate_diff(file1_nested_json, file2_nested_json, format_name='json') == result
-    assert generate_diff(file1_nested_yml, file2_nested_yaml, format_name='json') == result
-    assert generate_diff(file1_nested_yml, file2_nested_json, format_name='json') == result
-    assert generate_diff(file1_nested_json, file2_nested_yaml, format_name='json') == result
+    assert generate_diff(file1_nested_json, file2_nested_json,
+                         format_name='json') == result
+    assert generate_diff(file1_nested_yml, file2_nested_yaml,
+                         format_name='json') == result
+    assert generate_diff(file1_nested_yml, file2_nested_json,
+                         format_name='json') == result
+    assert generate_diff(file1_nested_json, file2_nested_yaml,
+                         format_name='json') == result
