@@ -19,7 +19,7 @@ If you have not, type:
 See https://python-poetry.org/docs/ for more info about Poetry.
 2. Clone repository:
 ``$ git clone https://github.com/sergkim13/python-project-50.git``
-2. Type: 
+3. Type: 
 ```make install-gendiff```
 
 
@@ -34,7 +34,7 @@ See https://python-poetry.org/docs/ for more info about Poetry.
 2. **-f, --format** - ```$ gendif -f``` - allows you to select the format of the 
 difference output. **Available formats:**
   
-   1. `-f stylish`- default form. Example output:
+   a) `-f stylish`- default form. Example output:
 
     > 
        {
@@ -46,14 +46,14 @@ difference output. **Available formats:**
           + verbose: true
        }
     
-    2. `-f plain`. Example output:  
+    b) `-f plain`. Example output:  
   
     > Property 'common.follow' was added with value: false  
     Property 'common.setting2' was removed  
     Property 'common.setting3' was updated. From true to [complex value]  
     Property 'common.setting4' was added with value: 'blah blah'
 
-    3. `-f json`. Returns the difference in json format.
+    c) `-f json`. Returns the difference in json format.
   
     >{"-follow": false, "=host": "hexlet.io", "-proxy": "123.234.53.22", "-timeout": 50, "+timeout": 20, "+verbose": true}
 ______________
