@@ -5,7 +5,7 @@
 [![Actions Status](https://github.com/sergkim13/python-project-50/actions/workflows/project_ci.yml/badge.svg)](https://github.com/sergkim13/python-project-50/actions/workflows/project_ci.yml)[![Maintainability](https://api.codeclimate.com/v1/badges/4b548ad9dd2986338109/maintainability)](https://codeclimate.com/github/sergkim13/python-project-50/maintainability)[![Test Coverage](https://api.codeclimate.com/v1/badges/4b548ad9dd2986338109/test_coverage)](https://codeclimate.com/github/sergkim13/python-project-50/test_coverage)
 
 ### Description:
-This CLI-utility compares two ```JSON``` or ```YAML``` files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
+This CLI-utility compares two `JSON` or `YAML` files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
 Input "gendiff -h" for more information.
 
 ### Requirements:
@@ -15,23 +15,19 @@ Input "gendiff -h" for more information.
 ### Install:
 1. Make sure you have Poetry installed on your computer.
 If you have not, type:
-```curl -sSL https://install.python-poetry.org | python3 -``` (works for Linux, macOS, Windows (WSL))
+`curl -sSL https://install.python-poetry.org | python3 -` (works for Linux, macOS, Windows (WSL))
 See https://python-poetry.org/docs/ for more info about Poetry.
 2. Clone repository:
-``$ git clone https://github.com/sergkim13/python-project-50.git``
+`$ git clone https://github.com/sergkim13/python-project-50.git`
 3. Type: 
-```make install-gendiff```
-
-
-
-
+`make install-gendiff`
 
 ### Manual:
 **To compare files in the terminal, type:**  
->```$ gendiff <path1>  <path2>```
+>`$ gendiff <path1>  <path2>`
 
-1. -**h, --help** - ```$ gendif -h``` - shows a guide;
-2. **-f, --format** - ```$ gendif -f``` - allows you to select the format of the 
+1. -**h, --help** - `$ gendif -h` - shows a guide;
+2. **-f, --format** - `$ gendif -f` - allows you to select the format of the 
 difference output. **Available formats:**
   
    a) `-f stylish`- default form. Example output:
