@@ -4,8 +4,15 @@
 [![Actions Status](https://github.com/sergkim13/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/sergkim13/python-project-50/actions)
 [![Actions Status](https://github.com/sergkim13/python-project-50/actions/workflows/project_ci.yml/badge.svg)](https://github.com/sergkim13/python-project-50/actions/workflows/project_ci.yml)[![Maintainability](https://api.codeclimate.com/v1/badges/4b548ad9dd2986338109/maintainability)](https://codeclimate.com/github/sergkim13/python-project-50/maintainability)[![Test Coverage](https://api.codeclimate.com/v1/badges/4b548ad9dd2986338109/test_coverage)](https://codeclimate.com/github/sergkim13/python-project-50/test_coverage)
 
+### Description:
+This CLI-utility compares two ```JSON``` or ```YAML``` files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
+Input "gendiff -h" for more information.
 
-### Installation
+### Requirements:
+1. MacOS / Linux
+2. Poetry
+
+### Install:
 1. Make sure you have Poetry installed on your computer.
 If you have not, type:
 ```curl -sSL https://install.python-poetry.org | python3 -``` (works for Linux, macOS, Windows (WSL))
@@ -16,9 +23,7 @@ See https://python-poetry.org/docs/ for more info about Poetry.
 ```make install-gendiff```
 
 
-### Description:
-This CLI-utility compares two ```JSON``` or ```YAML``` files and shows a difference. You can set a format of output: 'stylish' mode (set by default) , 'plain' mode or 'json' mode.
-Input "gendiff -h" for more information.
+
 
 
 ### Manual:
