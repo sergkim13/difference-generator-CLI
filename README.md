@@ -9,17 +9,12 @@ This CLI-utility compares two `JSON` or `YAML` files and shows a difference. You
 Input "gendiff -h" for more information.
 
 ### Requirements:
-1. MacOS / Linux
-2. Poetry
+MacOS / Linux
 
 ### Install:
-1. Make sure you have Poetry installed on your computer.
-If you have not, type:
-`curl -sSL https://install.python-poetry.org | python3 -` (works for Linux, macOS, Windows (WSL))
-See https://python-poetry.org/docs/ for more info about Poetry.
-2. Clone repository:
+1. Clone repository:
 `$ git clone https://github.com/sergkim13/python-project-50.git`
-3. Type: 
+2. Type: 
 `make install-gendiff`
 
 ### Manual:
