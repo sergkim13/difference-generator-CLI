@@ -15,7 +15,7 @@ MacOS / Linux
 1. Clone repository:
 `$ git clone https://github.com/sergkim13/python-project-50.git`
 2. Type: 
-`make install-gendiff`
+`make package-install`
 
 ### Manual:
 **To compare files in the terminal, type:**  
